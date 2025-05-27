@@ -1,5 +1,5 @@
 {
-  "name": "spinaleclipse",
+  "name": "mike-tat",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,19 +9,32 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "13.5.4"
+    "@portabletext/react": "^3.2.1",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@sanity/client": "^6.29.0",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.89.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.6.5",
+    "lucide-react": "^0.487.0",
+    "next": "13.5.4",
+    "next-sanity": "^9.11.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity": "^3.89.0",
+    "stripe": "^12.17.0",
+    "styled-components": "^6.1.18",
+    "tailwind-merge": "^3.3.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10",
-    "postcss": "^8",
-    "tailwindcss": "^3",
-    "eslint": "^8",
-    "eslint-config-next": "13.5.4"
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.11",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
   }
 }
