@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware';
 
 type CartItem = {
   id: string;
-  name: string;
+  title: string;
   price: number;
   image: string;
 };

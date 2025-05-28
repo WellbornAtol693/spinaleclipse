@@ -8,7 +8,7 @@ export default function OrdersPage() {
   const clearCart = useCartStore((state) => state.clearCart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
 
-  const handleCheckout = async (req, res) => {
+  const handleCheckout = async () => {
     try {
     	const response = await fetch('./api/checkout', {
     		method: 'POST',
