@@ -1,6 +1,6 @@
 // app/studio/layout.tsx
 
-import './globals.css' // or wherever your global styles are
+import '../globals.css' 
 
 export const metadata = {
   title: 'Studio',
