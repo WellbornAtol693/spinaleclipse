@@ -43,7 +43,7 @@ export default function ProductPage({ params }: Props) {
   const handleAddToCart = () => {
     addToCart({
       id: product._id,
-      name: product.title,
+      title: product.title,
       price: product.price,
       image: product.image ? urlFor(product.image).url() : '',
       priceId: product.priceId,
