@@ -15,7 +15,7 @@ type Props = {
 
 export default function ProductPage({ params }: Props) {
   const addToCart = useCartStore((state) => state.addToCart)
-  const [product, setProduct] = useState<any>(null)
+  const [product, setProduct] = useState<Product | null>(null)
 
   useEffect(() => {
     const fetchProduct = async () => {
