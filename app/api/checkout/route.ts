@@ -11,8 +11,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'No items in cart' }, { status: 400 });
     }
 
-    const line_items = items.map((item: any) => ({
-      price: item.priceId, // must be a valid Stripe Price ID
+    const line_items = items.map((item: CartItem) => ({
+      price: item.priceId,
       quantity: 1,
     }));
 
