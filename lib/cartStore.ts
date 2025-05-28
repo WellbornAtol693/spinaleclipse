@@ -12,7 +12,7 @@ type CartState = {
   items: CartItem[];
   addToCart: (item: CartItem) => void;
   clearCart: () => void;
-  rewmoveFromCart: (id: string) => void;
+  removeFromCart: (id: string) => void;
 };
 
 export const useCartStore = create<CartState>()(
