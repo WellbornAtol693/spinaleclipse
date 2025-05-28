@@ -7,6 +7,15 @@ import { urlFor } from '@/sanity/lib/image'
 import { notFound } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
+type Product = {
+  _id: string
+  title: string
+  price: number
+  description: string
+  image: any
+  priceId: string
+}
+
 type Props = {
   params: {
     slug: string

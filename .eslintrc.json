@@ -8,6 +8,6 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    // n/a for now
+    "@typescript-eslint/no-explicit-any": "warn"
   }
 }
