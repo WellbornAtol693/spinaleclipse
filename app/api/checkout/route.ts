@@ -1,6 +1,7 @@
 // app/api/checkout/route.ts
 
 import { NextRequest, NextResponse } from 'next/server';
+import type { useCartStore } from '@/lib/cartStore';
 import stripe from '@/lib/stripe';
 
 export async function POST(req: NextRequest) {
@@ -11,7 +12,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'No items in cart' }, { status: 400 });
     }
 
-    const line_items = items.map((item: CartItem) => ({
+    const line_items = items.map((item: useCartStore ) => ({
       price: item.priceId,
       quantity: 1,
     }));
