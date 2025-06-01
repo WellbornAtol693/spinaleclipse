@@ -27,10 +27,10 @@ export default function ShopPage() {
     <div className="min-h-screen bg-gray-700 text-white flex flex-col justify-between">
       {/* HEADER */}
       <header className="w-full px-6 py-4 border-b border-neutral-800 flex justify-between items-center">
-        <h1 className="text-3xl font-bold tracking-wide">SPINE</h1>
+        <h1 className="text-3xl sm: text-xl font-bold tracking-wide">SPINE</h1>
         <nav>
           <div className='absolute left-1/2 transform -translate-x-1/2'>
-          <a href="/" className="flex-1 flex text-2xl justify-center hover:underline font-bold">Back to Landing</a>
+          <a href="/" className="flex-1 flex text-2xl sm: text-sm justify-center hover:underline font-bold">Back to Landing</a>
           </div>
           <a href="/orders" className="text-sm hover:underline">
             < ShoppingBag />

@@ -55,7 +55,7 @@ export default function LandingPage() {
           className="mb-6"
         >
           <Image
-            src="/logo1.PNG"
+            src="/logo1.png"
             alt="Logo"
             width={960}
             height={960}
