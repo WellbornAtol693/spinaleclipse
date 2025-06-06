@@ -14,6 +14,7 @@ type Product = {
   description: string
   image: any
   priceId: string
+  sizes: string[]
 }
 
 type Props = {
