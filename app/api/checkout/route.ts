@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
         product_data: {
           name: `${item.title} - Size ${item.size}`,
           metadata: {
-            productId: item.Id,
+            productId: item.id,
             size: item.size,
           },
         },
