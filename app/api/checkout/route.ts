@@ -12,12 +12,26 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'No items in cart' }, { status: 400 });
     }
 
-    const line_items = items.map((item: CartItem ) => ({
-      price: item.priceId,
+    const line_items = items.map((item: CartItem) => ({
       quantity: 1,
+      adjustable_quantity: { enabled: false },
+      price_data: {
+        currency: 'usd',
+        unit_amount: Math.round(item.price * 100), // convert dollars to cents
+        product_data: {
+          name: `${item.title} - Size ${item.size}`,
+          metadata: {
+            productId: item.productId,
+            size: item.size,
+          },
+        },
+      },
     }));
 
-    const origin = req.headers.get('origin') || process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    const origin =
+      req.headers.get('origin') ||
+      process.env.NEXT_PUBLIC_APP_URL ||
+      'https://spinaleclipse.vercel.app';
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],

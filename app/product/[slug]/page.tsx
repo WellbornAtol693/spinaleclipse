@@ -25,6 +25,7 @@ type Props = {
 export default function ProductPage({ params }: Props) {
   const addToCart = useCartStore((state) => state.addToCart)
   const [product, setProduct] = useState<Product | null>(null)
+  const [ selectedSize, setSelectedSize] = useState<string>('M')
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -34,7 +35,8 @@ export default function ProductPage({ params }: Props) {
       price,
       description,
       image,
-      priceId
+      priceId,
+      sizes,
     }`
       const result = await client.fetch(query, { slug: params.slug })
       if (!result) return notFound()
@@ -56,9 +58,10 @@ export default function ProductPage({ params }: Props) {
       price: product.price,
       image: product.image ? urlFor(product.image).url() : '',
       priceId: product.priceId,
-    })
+      size: selectedSize,
+    });
     window.location.href = '/orders'
-  }
+  };
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-12 text-white bg-gray-600">
@@ -85,6 +88,21 @@ export default function ProductPage({ params }: Props) {
           <h1 className="text-4xl text-gray-300 font-bold mb-4">{product.title}</h1>
           <p className="text-xl text-gray-300 mb-4">${product.price}</p>
           <p className="text-base text-gray-300">{product.description}</p>
+          {product?.sizes && (
+            <div>
+              <label htmlFor='size' className='block mb-1'>Select Size:</label>
+              <select
+                id= 'size'
+                className= 'border px-3 py-2 rounded text-black'
+                value={selectedSize}
+                onChange={(e) => setSelectedSize(e.target.value)}
+              >
+                {product.sizes.map((size: string) => (
+                  <option key={size} value={size}>{size}</option>
+                ))}
+              </select>
+            </div>
+          )}
           <button
             className="mt-6 bg-white text-black px-4 py-2 rounded hover:bg-gray-200"
             onClick={handleAddToCart}

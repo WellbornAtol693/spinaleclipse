@@ -35,5 +35,14 @@ export default {
       type: 'slug',
       options: { source: 'title', maxLength: 96 },
     },
+    {
+      name:'sizes',
+      title:'Available Sizes',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options:{
+        list: ['S','M','L'],
+      },
+    },
   ],
 };
